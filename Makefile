@@ -62,9 +62,6 @@ $(NAME):
 mainTest: $(SRC) 
 	$(CC) $(CFLAGS) $(SRC)
 
-mainsplit: $(SRC)
-	$(CC) $(CFLAGS) $(SRC)
-
 
 all: $(NAME)
 
