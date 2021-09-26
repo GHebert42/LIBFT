@@ -265,7 +265,7 @@ int main()
           
         while (xab[i] != NULL)
         {
-            printf(":: _ %s _", xab[i]);
+            printf(":: _ %s _\n", xab[i]);
             i ++;
         }
         while (xab[i])

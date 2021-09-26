@@ -59,7 +59,7 @@ $(NAME):
 	@$(CC) $(CFLAGS) -c $(SRC) 
 	@ar rcs $(NAME) $(OBJ)
 	
-mainTest: $(SRC) 
+mainTest: $(NAME) 
 	$(CC) $(CFLAGS) $(SRC)
 
 
