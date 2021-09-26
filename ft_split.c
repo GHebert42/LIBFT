@@ -11,43 +11,36 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int		numstring(char const *s1, char c)
+static int		kstr(char const *s, char c)
 {
-	int	comp;
-	int	cles;
-
-	comp = 0;
-	cles = 0;
-	if (*s1 == '\0')
+	int	k;
+	
+	k = 0;
+	if (*s == '\0')
 		return (0);
-	while (*s1 != '\0')
+	while (*s != '\0')
 	{
-		if (*s1 == c)
-			cles = 0;
-		else if (cles == 0)
-		{
-			cles = 1;
-			comp++;
-		}
-		s1++;
+		if (*s == c)
+			k++;
+		s++;
 	}
-	return (comp);
+	return (k);
 }
 
-static int		numchar(char const *s2, char c, int i)
+static int		lenstr(char const *s, char c, int i)
 {
-	int	lenght;
+	int	len;
 
-	lenght = 0;
-	while (s2[i] != c && s2[i] != '\0')
+	len = 0;
+	while (s[i] != c && s[i] != '\0')
 	{
-		lenght++;
+		len++;
 		i++;
 	}
-	return (lenght);
+	return (len);
 }
 
-static char		**freee(char const **dst, int j)
+static char		**fr(char const **dst, int j)
 {
 	while (j > 0)
 	{
@@ -58,7 +51,7 @@ static char		**freee(char const **dst, int j)
 	return (NULL);
 }
 
-static char		**affect(char const *s, char **dst, char c, int l)
+static char		**new(char const *s, char **dst, char c, int len)
 {
 	int	i;
 	int	j;
@@ -66,14 +59,14 @@ static char		**affect(char const *s, char **dst, char c, int l)
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0' && j < l)
+	while (s[i] != '\0' && j < len)
 	{
 		k = 0;
 		while (s[i] == c)
 			i++;
-		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
+		dst[j] = (char *)malloc(sizeof(char) * lenstr(s, c, i) + 1);
 		if (dst[j] == NULL)
-			return (freee((char const **)dst, j));
+			return (fr((char const **)dst, j));
 		while (s[i] != '\0' && s[i] != c)
 			dst[j][k++] = s[i++];
 		dst[j][k] = '\0';
@@ -86,13 +79,13 @@ static char		**affect(char const *s, char **dst, char c, int l)
 char			**ft_split(char const *s, char c)
 {
 	char	**dst;
-	int		l;
+	int		len;
 
 	if (s == NULL)
 		return (NULL);
-	l = numstring(s, c);
-	dst = (char **)malloc(sizeof(char *) * (l + 1));
+	len = kstr(s, c);
+	dst = (char **)malloc(sizeof(char *) * (len + 1));
 	if (dst == NULL)
 		return (NULL);
-	return (affect(s, dst, c, l));
+	return (new(s, dst, c, len));
 }
