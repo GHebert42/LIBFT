@@ -274,5 +274,11 @@ int main()
             i++;
         }
         free(xab);
+
+    
+
+	printf("\n %s\n", ft_itoa(123156));
+	
+
 }
 
