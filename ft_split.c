@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:46:59 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/24 10:12:27 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/27 07:47:25 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,13 +16,15 @@ static int		kstr(char const *s, char c)
 	int	k;
 	
 	k = 0;
-	if (*s == '\0')
+	if (*s == '\0' && k == 0)
 		return (0);
 	while (*s != '\0')
 	{
 		if (*s == c)
 			k++;
 		s++;
+		if (*s =='\0')
+			k++;
 	}
 	return (k);
 }

@@ -6,13 +6,12 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/24 10:11:11 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/27 07:47:29 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-// main file to test my 5 first function
 
-int main()
+int main(void)
 {
 	// var.
 	char **xab;
@@ -133,7 +132,7 @@ int main()
         printf(" memset depass %s\n", newstr);
         memset(newstr+6, 'x', 4);
         printf("Off memset depass %s\n\n", newstr);
-                                        //  test b zero
+        	                             //  test b zero
         ft_bzero(newstr, 12);
         ft_bzero(star, 12);
                                         //    test ft_memcpy
@@ -168,7 +167,7 @@ int main()
         memmove(newstr+2, star, 9);
         printf("memmove__ %s__\n\n", newstr);
                                         //  insert ft_calloc...
-           strcpy(star,"111111");
+        strcpy(star,"111111");
         strcpy(newstr,"");
         printf("star fill with 1...%s\n", star);
         printf("newstr nonefill __%s__\n",newstr);
@@ -179,73 +178,72 @@ int main()
             }
             printf("\n");
         }
-                                        // test ft_substr
+                                      		  // test ft_substr
         printf("fill with ...%s\n", star);
         newb = ft_substr(str, 5, 7);
         printf("newstr newValue Set __%s__\n", newb);
-    //    test_ ft_strlcat ...
+  										  //    test_ ft_strlcat ...
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
         ft_strlcat(newstr, sts, 18);
         printf("\n sts %s, newstr %s\n", sts, newstr);
-
+//
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
     //    strlcat(newstr, sts, 18);
         printf("\n OFF sts %s, newstr %s\n", sts, newstr);
-    //    test_ ft_strlcpy ...
+  		 								 //    test_ ft_strlcpy ...
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
         ft_strlcpy(newstr, sts, 2);
         printf("\n ---strlcpysts %s, newstr %s\n", sts, newstr);
-
+//
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
        // strlcpy(newstr, sts, 11);
         printf("\n OFF str %s, newstr %s\n", sts, newstr);
-    // test___ toupper - tolower
+								   			 // test___ toupper - tolower
          num = ft_toupper('a');
         printf("  %c\n", num);
         num = ft_tolower('A');
         printf("  %c\n", num);
-    // test ---  strchr - strrchr
+   										 // test ---  strchr - strrchr
         strcpy(sts,"Allo, Champion");
         s = ft_strrchr(sts,'o');
         printf("test _last_ strrchr next pos is:%s\n", (s+1));
-//
         strcpy(sts,"Allo, Champion");
         s = ft_strchr(sts,'o');
         printf("next pos _first_test strchr is:%s\n", (s+1));
-    // string to compare
+   										 // string to compare
         strcpy(s1,"allo, champion");
         strcpy(s2,"allo, Champion");
         strcpy(ss,"pi");
         strcpy(ss,"-a22");
-    // test ft_strncmp
+										    // test ft_strncmp
         rep = ft_strncmp(s1, s2, 5);
         printf("Rep = %d\n",rep);
-        // test strncmp
+									        // test strncmp
         rep = strncmp(s1, s2, 5);
         printf("Off.Rep = %d\n",rep);
-    // test ft_memcmp
-        rep = ft_memcmp(s1, s2, 9);
+   										 // test ft_memcmp
+	    rep = ft_memcmp(s1, s2, 9);
         printf("memcmp Rep = %d\n",rep);
-        // test memcmp
+								        // test memcmp
         rep = memcmp(s1, s2, 9);
         printf("Off.memcmp Rep = %d\n",rep);
-    // test ft_memchr
-        rp = ft_memchr(s1, 'p', 12);
+   										 // test ft_memchr
+		rp = ft_memchr(s1, 'p', 12);
         printf("memchr Rep = %s\n",rp);
-        // test strncmp
+								        // test strncmp
         rp = memchr(s1, 'p', 12);
         printf("Off. memchr Rep = %s\n",rp);
-    // test ft_strnstr
+   									 // test ft_strnstr
         rp = ft_strnstr(s1, ss, 12);
         printf("Rep = %s\n",rp);
-        // test strnstr
+								        // test strnstr
      //   rp = strnstr(s1, ss, 12);
         printf("Off. strnstr Rep = %s\n",rp);
-    //test atoi  --- ft_atoi
+   									 //test atoi  --- ft_atoi
         rep = atoi(ss);
         printf("string = %s  , Int = %d\n",ss , rep);
         rep = ft_atoi(ss);
@@ -255,17 +253,16 @@ int main()
         strcpy(s2,"...Bien, bravoxx");
         newb = ft_strjoin(s1, s2);
         printf("RESULTAT: %s\n", newb);
-            // test ft_strtrim
+          									  // test ft_strtrim
         answer = ft_strtrim(newb, "x");
         printf("TRIMD RESULTAT: %s\n", answer);
-     //   test ft_split
+    										 //   test ft_split
         xab = ft_split(answer, ',');
         i = 0;
 		printf("test split , , , __\n");
-          
         while (xab[i] != NULL)
         {
-            printf(":: _ %s _\n", xab[i]);
+            printf(":: _ %s __%d\n", xab[i], i);
             i ++;
         }
         while (xab[i])
@@ -275,10 +272,6 @@ int main()
         }
         free(xab);
 
-    
-
 	printf("\n %s\n", ft_itoa(123156));
-	
-
 }
 
