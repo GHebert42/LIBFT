@@ -6,7 +6,7 @@
 #    By: gehebert <gehebert@42quebec.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 06:36:32 by gehebert          #+#    #+#              #
-#    Updated: 2021/09/24 10:21:46 by gehebert         ###   ########.fr        #
+#    Updated: 2021/09/28 09:09:48 by gehebert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # _*_ Makefile _*_
@@ -51,6 +51,8 @@ SRC = ft_isalpha.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
 	MainTest.c 
 	
 

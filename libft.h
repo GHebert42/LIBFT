@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 06:55:31 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/27 08:08:12 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/28 09:04:02 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -57,5 +57,7 @@ char    *ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *s, char c);
 char	*ft_itoa(int nb);
+char	*ft_strmapi(const char *s (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
