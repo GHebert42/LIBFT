@@ -50,11 +50,12 @@ SRC = ft_isalpha.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
 	ft_split.c \
-	ft_itoa.c \
+	ft_itoa.c  \
+	test.c ##\
 	ft_strmapi.c \
-	ft_striteri.c \
-	MainTest.c 
-	
+	ft_striteri.c 
+
+
 
 OBJ= $(SRC:.c=.o)
 
@@ -62,8 +63,11 @@ $(NAME):
 	@$(CC) $(CFLAGS) -c $(SRC) 
 	@ar rcs $(NAME) $(OBJ)
 	
-mainTest: $(NAME) 
-	$(CC) $(CFLAGS) $(SRC)
+main: $(NAME) 
+	$(CC) $(CFLAGS) $(SRC)  $(MAIN)
+
+##test: $(NAME)
+##	$(CC) $(CFLAGS) $(SRC)  $(TEST)	
 
 
 all: $(NAME)

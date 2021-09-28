@@ -12,31 +12,39 @@
 
 #include "libft.h"
 
-int main()
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char s1[30];
-//	char s2[30];
-//	char *newb;
-	char *answer;
-	char sep;
-	int i;
-	char **xab;
+	unsigned int	i;
+	char			*str;
 
-	strcpy(s1,"Allo,champion,Bien,Bravo");
-    printf("RESULTAT: %s\n", s1);
-     //   test ft_split
-		sep =  ',';
-        xab = ft_split(answer, sep);
-        i = 0;
-        while (i < 4)
-        {
-            printf("test split , , , _%s_", xab[i]);
-            i ++;
-        }
-        while (xab[i])
-        {
-            free(xab[i]);
-            i++;
-        }
-        free(xab);
+	if (!s)
+		return (NULL);
+	i = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen((char *)s)) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
+
+
+ char my_func(unsigned int i, char str)
+ {
+ 	printf("My inner function: index = %d and %c\n", i, str);
+ 	return str - 32;
+ }
+
+ int main()
+ {
+ 	char str[10] = "hello.";
+ 	printf("The result is %s\n", str);
+ 	char *result = ft_strmapi(str, my_func);
+ 	printf("The result is %s\n", result);
+ 	return 0;
+ }
+
