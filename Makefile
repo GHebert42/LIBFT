@@ -6,14 +6,14 @@
 #    By: gehebert <gehebert@42quebec.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 06:36:32 by gehebert          #+#    #+#              #
-#    Updated: 2021/09/29 08:46:41 by gehebert         ###   ########.fr        #
+#    Updated: 2021/09/29 11:25:07 by gehebert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # _*_ Makefile _*_
 #
 #
 
-NAME= libft
+NAME= libft.a
 
 CC= gcc
 
@@ -52,7 +52,8 @@ SRC = ft_isalpha.c \
 	ft_split.c \
 	ft_itoa.c  \
 	ft_strmapi.c \
-	my_func.c ##\
+	mapi_f.c \
+   	it_t.c \
 	ft_striteri.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
@@ -71,11 +72,6 @@ $(NAME):
 main: $(NAME)
 	$(CC) $(CFLAGS) $(SRC) $(SUB)
 
-
-##test: $(NAME)
-##	$(CC) $(CFLAGS) $(SRC)  $(TEST)	
-
-
 all: $(NAME)
 
 clean:
@@ -86,5 +82,5 @@ fclean: clean
 
 re: fclean all
 
-#.PHONY:  clean fclean
+.PHONY:  clean fclean re
 

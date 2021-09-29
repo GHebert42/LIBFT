@@ -6,11 +6,10 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 08:57:57 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/29 11:16:49 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
 
 int main(void)
 {
@@ -250,12 +249,12 @@ int main(void)
         rep = ft_atoi(ss);
         printf("ft_atoi %d\n", rep);
                                             //   test ft_strjoin
-        strcpy(s1,"xxxAllo, champion, ");
-        strcpy(s2,"...Bien, bravoxx");
+        strcpy(s1,"xoxxAllo, champion, ");
+        strcpy(s2,"...Bien, bravoxo");
         newb = ft_strjoin(s1, s2);
         printf("RESULTAT: %s\n", newb);
           									  // test ft_strtrim
-        answer = ft_strtrim(newb, "x");
+        answer = ft_strtrim(newb, "xo");
         printf("TRIMD RESULTAT: %s\n", answer);
     										 //   test ft_split
         xab = ft_split(answer, ',');
@@ -276,10 +275,11 @@ int main(void)
 		printf("\n %s\n", ft_itoa(123156));
 
 							// ft_strmapi.c    link my_func remove from libft-makefile
-		strcpy(sts, "hello.");
+		strcpy(sts, "germainh");
  		printf("The result is %s\n", sts);
- 		printf("The result is %s\n", ft_strmapi(sts, my_func)); 		
+ 		printf("The result is %s\n", ft_strmapi(sts, mapi_f)); 		
 		//		test ft_striteri
-
+		strcpy(sts, "gErmAin");
+		ft_striteri(sts, it_t); 	
+		printf("\n  test Iteri >> \n%s__ \n", sts); 	
 }
-
