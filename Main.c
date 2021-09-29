@@ -6,10 +6,11 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/27 07:47:29 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:57:57 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 
 int main(void)
 {
@@ -263,15 +264,22 @@ int main(void)
         while (xab[i] != NULL)
         {
             printf(":: _ %s __%d\n", xab[i], i);
-            i ++;
-        }
+            i ++;        
+		}
         while (xab[i])
         {
             free(xab[i]);
-            i++;
-        }
+            i++;        
+		}
         free(xab);
+											//  ft_itoa
+		printf("\n %s\n", ft_itoa(123156));
 
-	printf("\n %s\n", ft_itoa(123156));
+							// ft_strmapi.c    link my_func remove from libft-makefile
+		strcpy(sts, "hello.");
+ 		printf("The result is %s\n", sts);
+ 		printf("The result is %s\n", ft_strmapi(sts, my_func)); 		
+		//		test ft_striteri
+
 }
 

@@ -6,7 +6,7 @@
 #    By: gehebert <gehebert@42quebec.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/15 06:36:32 by gehebert          #+#    #+#              #
-#    Updated: 2021/09/28 09:09:48 by gehebert         ###   ########.fr        #
+#    Updated: 2021/09/29 08:46:41 by gehebert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # _*_ Makefile _*_
@@ -51,23 +51,26 @@ SRC = ft_isalpha.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_itoa.c  \
-	test.c ##\
 	ft_strmapi.c \
+	my_func.c ##\
 	ft_striteri.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c
+
+SUB = main.c
 
 
 
 OBJ= $(SRC:.c=.o)
 
 $(NAME): 
-	@$(CC) $(CFLAGS) -c $(SRC) 
+	@$(CC) $(CFLAGS) -c $(SRC)  
 	@ar rcs $(NAME) $(OBJ)
-	
-main: $(NAME) 
-	$(CC) $(CFLAGS) $(SRC)  $(MAIN)
+
+main: $(NAME)
+	$(CC) $(CFLAGS) $(SRC) $(SUB)
+
 
 ##test: $(NAME)
 ##	$(CC) $(CFLAGS) $(SRC)  $(TEST)	
