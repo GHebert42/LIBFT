@@ -1,0 +1,11 @@
+// ft_putchar_fd.c   par germ
+//
+#include "libft.c"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}
+
+
+
