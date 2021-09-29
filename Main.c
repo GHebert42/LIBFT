@@ -1,4 +1,9 @@
-/* ************************************************************************** */
+printf("[ft_putnbr_fd]\n");
+	ft_putnbr_fd(-31416, 1);//FT_PUTNBR_FD	
+	printf("\n");
+	printf("\n");
+	printf("[expected]\n");
+	printf("-31416\n");/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   MainTest.c                                         :+:      :+:    :+:   */
@@ -290,8 +295,12 @@ int main(void)
 		printf("_putstr_");
 		ft_putstr_fd(ss, 1);
 		ft_putendl_fd(ss, 1);
+		printf("[ft_putnbr_fd]\n");
+		ft_putnbr_fd(-31416, 1);//FT_PUTNBR_FD	
+		printf("\n");
+		printf("\n");
+		printf("[expected]\n");
+		printf("-31416\n");	
 
-		
-
-		printf("\n-----------end of part two-----\n");
+		printf("\n-----------end of Mandatory part -----\n");
 }
