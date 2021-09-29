@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 11:16:49 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/09/29 13:10:07 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -281,5 +281,17 @@ int main(void)
 		//		test ft_striteri
 		strcpy(sts, "gErmAin");
 		ft_striteri(sts, it_t); 	
-		printf("\n  test Iteri >> \n%s__ \n", sts); 	
+		printf("\n  test Iteri >> \n%s__ \n", sts); 
+
+	//   test ft_put_fd ......ish
+		strcpy(ss, "ALLOCATION:");
+		printf("_putchar_ ");
+	   	ft_putchar_fd('+', 1);
+		printf("_putstr_");
+		ft_putstr_fd(ss, 1);
+		ft_putendl_fd(ss, 1);
+
+		
+
+		printf("\n-----------end of part two-----\n");
 }
