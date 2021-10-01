@@ -1,9 +1,19 @@
-// ft_itoa.c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/01 06:21:03 by gehebert          #+#    #+#             */
+/*   Updated: 2021/10/01 06:31:48 by gehebert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-int		len(long nb)
+static int	len(long nb)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (nb < 0)
@@ -21,13 +31,14 @@ int		len(long nb)
 
 char	*ft_itoa(int nb)
 {
-	char *str;
+	char	*str;
 	long	n;
 	int		i;
 
 	n = nb;
 	i = len(n);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (NULL);
 	str[i--] = '\0';
 	if (n == 0)
@@ -48,4 +59,3 @@ char	*ft_itoa(int nb)
 	}
 	return (str);
 }
-

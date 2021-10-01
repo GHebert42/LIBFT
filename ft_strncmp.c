@@ -6,20 +6,20 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 18:45:06 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/16 07:19:14 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:55:02 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	unsigned int	i;
-
-	i = 0;
 	if (n == 0)
 		return (0);
-	while (s1[i] && s1[i] == s2[i] && (i < n - 1))
+	while (n-- != 0)
 	{
-		i++;
+		if (*s1 != *s2++)
+			return (*(unsigned char *)s1 - *(unsigned char *)--s2);
+		if (*s1++ == 0)
+			break ;
 	}
-	return ((s1[i]) - (s2[i]));
+	return (0);
 }

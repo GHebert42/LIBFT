@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 06:10:42 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/21 10:15:37 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:09:34 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,6 +17,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	s2_len;
 	size_t	stot;
 	char	*new;
+
 	if (!s1 && !s2)
 		return (ft_strdup(""));
 	if (s1 && !s2)

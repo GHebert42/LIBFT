@@ -6,14 +6,14 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 10:12:25 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/24 09:03:57 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:20:53 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
-	char	*new;
+	char			*new;
 	unsigned int	i;
 
 	i = start;
@@ -27,7 +27,8 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 		i++;
 	if (len > (i - start))
 		len = i - start;
-	if (! (new = malloc(sizeof(char) * (len + 1))))
+	new = malloc(sizeof(char) * (len + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (len > 0)

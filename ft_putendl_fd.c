@@ -6,11 +6,9 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 11:03:20 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 13:10:11 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 06:48:53 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// ft_putendl.c  par germ
-//
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)

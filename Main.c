@@ -1,9 +1,4 @@
-printf("[ft_putnbr_fd]\n");
-	ft_putnbr_fd(-31416, 1);//FT_PUTNBR_FD	
-	printf("\n");
-	printf("\n");
-	printf("[expected]\n");
-	printf("-31416\n");/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   MainTest.c                                         :+:      :+:    :+:   */
@@ -11,7 +6,7 @@ printf("[ft_putnbr_fd]\n");
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 13:10:07 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 08:44:00 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,7 +45,7 @@ int main(void)
 	printf(" %d Is alpha %s\n", test, answer);
 	test = ft_isalpha('A');  // test isalpha
 	if (test == 0)
-		answer = "NO";
+	answer = "NO";
 	else 
 		answer = "YES";
 	printf(" %d Is alpha %s\n", test, answer); 	
@@ -214,11 +209,14 @@ int main(void)
         printf("  %c\n", num);
    										 // test ---  strchr - strrchr
         strcpy(sts,"Allo, Champion");
-        s = ft_strrchr(sts,'o');
+        s = ft_strrchr(sts, 'o');
         printf("test _last_ strrchr next pos is:%s\n", (s+1));
+		s = strchr(sts, 'o');
+		printf("test NEW_ strchr : %s\n", (s));
+		
         strcpy(sts,"Allo, Champion");
-        s = ft_strchr(sts,'o');
-        printf("next pos _first_test strchr is:%s\n", (s+1));
+        s = ft_strchr(sts, 'o');
+        printf("next pos _first_test strchr is:%s\n", (s));
    										 // string to compare
         strcpy(s1,"allo, champion");
         strcpy(s2,"allo, Champion");

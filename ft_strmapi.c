@@ -6,10 +6,9 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 07:44:40 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 09:40:12 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:10:12 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//  ft_strmapi.c  par germ
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

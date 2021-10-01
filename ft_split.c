@@ -6,15 +6,15 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:46:59 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/27 07:47:25 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:07:03 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int		kstr(char const *s, char c)
+static int	kstr(char const *s, char c)
 {
 	int	k;
-	
+
 	k = 0;
 	if (*s == '\0' && k == 0)
 		return (0);
@@ -23,13 +23,13 @@ static int		kstr(char const *s, char c)
 		if (*s == c)
 			k++;
 		s++;
-		if (*s =='\0')
+		if (*s == '\0')
 			k++;
 	}
 	return (k);
 }
 
-static int		lenstr(char const *s, char c, int i)
+static int	lenstr(char const *s, char c, int i)
 {
 	int	len;
 
@@ -42,7 +42,7 @@ static int		lenstr(char const *s, char c, int i)
 	return (len);
 }
 
-static char		**fr(char const **dst, int j)
+static char	**fr(char const **dst, int j)
 {
 	while (j > 0)
 	{
@@ -53,7 +53,7 @@ static char		**fr(char const **dst, int j)
 	return (NULL);
 }
 
-static char		**new(char const *s, char **dst, char c, int len)
+static char	**new(char const *s, char **dst, char c, int len)
 {
 	int	i;
 	int	j;
@@ -78,7 +78,7 @@ static char		**new(char const *s, char **dst, char c, int len)
 	return (dst);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**dst;
 	int		len;

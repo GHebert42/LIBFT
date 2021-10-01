@@ -6,17 +6,12 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 11:02:19 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 13:08:06 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 06:40:39 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// ft_putchar_fd.c   par germ
-//
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }
-
-
-

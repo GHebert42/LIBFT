@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 06:55:31 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 11:16:53 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 07:16:39 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -31,7 +31,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 // ref: MainNext
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -53,14 +53,14 @@ char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t n, size_t size);
 // ref: part II
 char	*ft_substr(char *s, unsigned int start, size_t len);
-char    *ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *s, char c);
 char	*ft_itoa(int nb);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	mapi_f(unsigned int i, char str);     // to be remove
+char	mapi_f(unsigned int i, char str);// to be remove
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	it_t(unsigned int i, char *c);           //to be remove
+void	it_t(unsigned int i, char *c);//to be remove
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

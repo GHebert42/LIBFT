@@ -6,15 +6,12 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 11:02:54 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/29 13:07:56 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 06:50:48 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// ft_putstr_fd.c par
-//
-
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;

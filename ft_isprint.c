@@ -6,18 +6,14 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 10:41:58 by gehebert          #+#    #+#             */
-/*   Updated: 2021/09/16 13:25:11 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/01 06:19:56 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//
-//  ft_isprint by germ
-//
 #include "libft.h"
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }
