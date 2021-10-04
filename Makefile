@@ -28,6 +28,11 @@ SRC = ft_isalpha.c 	ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strmapi.c mapi_f.c it_t.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstadd_back.c ft_lstsize.c \
+	ft_lstclear.c ft_lstdelone.c ft_lstmap.c ft_lstiter.c
+
+BONUS_OBJ = $(BONUS:.c=.o)
+
 SUB = Main.c
 
 all: $(NAME)
@@ -42,10 +47,13 @@ main: $(NAME)
 	$(CC) $(CFLAGS) $(SRC) $(SUB)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
