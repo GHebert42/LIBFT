@@ -6,88 +6,87 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:46:59 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/01 07:07:03 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/04 15:13:19 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	kstr(char const *s, char c)
+static int	unleah(char **str, int size)
 {
-	int	k;
-
-	k = 0;
-	if (*s == '\0' && k == 0)
-		return (0);
-	while (*s != '\0')
-	{
-		if (*s == c)
-			k++;
-		s++;
-		if (*s == '\0')
-			k++;
-	}
-	return (k);
+	while (size--)
+		free(str[size]);
+	return (-1);
 }
 
-static int	lenstr(char const *s, char c, int i)
-{
-	int	len;
-
-	len = 0;
-	while (s[i] != c && s[i] != '\0')
-	{
-		len++;
-		i++;
-	}
-	return (len);
-}
-
-static char	**fr(char const **dst, int j)
-{
-	while (j > 0)
-	{
-		j--;
-		free((void *)dst[j]);
-	}
-	free(dst);
-	return (NULL);
-}
-
-static char	**new(char const *s, char **dst, char c, int len)
+static int	count_words(const char *str, char charset)
 {
 	int	i;
-	int	j;
-	int	k;
+	int	words;
 
+	words = 0;
 	i = 0;
-	j = 0;
-	while (s[i] != '\0' && j < len)
+	while (str[i] != '\0')
 	{
-		k = 0;
-		while (s[i] == c)
-			i++;
-		dst[j] = (char *)malloc(sizeof(char) * lenstr(s, c, i) + 1);
-		if (dst[j] == NULL)
-			return (fr((char const **)dst, j));
-		while (s[i] != '\0' && s[i] != c)
-			dst[j][k++] = s[i++];
-		dst[j][k] = '\0';
-		j++;
+		if ((str[i + 1] == charset || str[i + 1] == '\0') == 1
+			&& (str[i] == charset || str[i] == '\0') == 0)
+			words++;
+		i++;
 	}
-	dst[j] = 0;
-	return (dst);
+	return (words);
 }
 
-char	**ft_split(char const *s, char c)
+static void	write_word(char *dest, const char *from, char charset)
 {
-	char	**dst;
-	int		len;
+	int	i;
 
-	if (s == NULL)
+	i = 0;
+	while ((from[i] == charset || from[i] == '\0') == 0)
+	{
+		dest[i] = from[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
+static int	write_split(char **split, const char *str, char charset)
+{
+	int		i;
+	int		j;
+	int		word;
+
+	word = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] == charset || str[i] == '\0') == 1)
+			i++;
+		else
+		{
+			j = 0;
+			while ((str[i + j] == charset || str[i + j] == '\0') == 0)
+				j++;
+			split[word] = (char *)malloc(sizeof(char) * (j + 1));
+			if (split[word] == NULL)
+				return (unleah(split, word - 1));
+			write_word(split[word], str + i, charset);
+			i += j;
+			word++;
+		}
+	}
+	return (0);
+}
+
+char	**ft_split(const char *str, char c)
+{
+	char	**res;
+	int		words;
+
+	words = count_words(str, c);
+	res = (char **)malloc(sizeof(char *) * (words + 1));
+	if (res == NULL)
 		return (NULL);
-	len = kstr(s, c);
-	dst = (char **)malloc(sizeof(char *) * (len + 1));
-	if (dst == NULL)
+	res[words] = 0;
+	if (write_split(res, str, c) == -1)
 		return (NULL);
-	return (new(s, dst, c, len));
+	return (res);
 }

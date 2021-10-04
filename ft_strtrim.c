@@ -6,10 +6,11 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 10:15:57 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/01 13:44:11 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/04 14:34:51 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 static int	ischar(char c, const char *set)
 {
 	size_t	i;
@@ -31,7 +32,8 @@ static char	*trimming(const char *s1, const char *set, size_t *k, size_t i)
 	j = 0;
 	while (ischar(*(s1 + len - j - 1), set))
 		j++;
-	if ((dst = ft_calloc(sizeof(char), len - (j + i) + 1)) == NULL)
+	dst = ft_calloc(sizeof(char), len - (j + i) + 1);
+	if (dst == NULL)
 		return (NULL);
 	while (*k < len - (j + i))
 	{
@@ -41,7 +43,7 @@ static char	*trimming(const char *s1, const char *set, size_t *k, size_t i)
 	return (dst);
 }
 
-char		*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;
 	size_t	k;
@@ -63,5 +65,3 @@ char		*ft_strtrim(const char *s1, const char *set)
 		*(dst + k) = '\0';
 	return (dst);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/01 08:44:00 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/04 06:31:18 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -260,7 +260,9 @@ int main(void)
         answer = ft_strtrim(newb, "xo");
         printf("TRIMD RESULTAT: %s\n", answer);
     										 //   test ft_split
-        xab = ft_split(answer, ',');
+		printf("\n ft_split new testi\n");
+		strcpy(answer, "        ");		
+        xab = ft_split(answer, ' ');
         i = 0;
 		printf("test split , , , __\n");
         while (xab[i] != NULL)
