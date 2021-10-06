@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 07:57:45 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/04 06:31:18 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/06 07:30:01 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -185,13 +185,16 @@ int main(void)
   										  //    test_ ft_strlcat ...
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
-        ft_strlcat(newstr, sts, 18);
-        printf("\n sts %s, newstr %s\n", sts, newstr);
+        ft_strlcat(newstr, sts, 3);
+        printf("\n ft_strlcat:::sts %s, newstr %s\n", sts, newstr);
 //
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
-    //    strlcat(newstr, sts, 18);
         printf("\n OFF sts %s, newstr %s\n", sts, newstr);
+		
+ 		strlcat(newstr, sts, 3);
+	    printf("\n strlcat  %s, newstr %s\n", sts, newstr);
+  		
   		 								 //    test_ ft_strlcpy ...
         strcpy(sts,"123456789");
         strcpy(newstr,"abcdef");
@@ -247,6 +250,8 @@ int main(void)
      //   rp = strnstr(s1, ss, 12);
         printf("Off. strnstr Rep = %s\n",rp);
    									 //test atoi  --- ft_atoi
+		strcpy(ss,"99999999999999999999999999");
+											 
         rep = atoi(ss);
         printf("string = %s  , Int = %d\n",ss , rep);
         rep = ft_atoi(ss);
@@ -277,7 +282,7 @@ int main(void)
 		}
         free(xab);
 											//  ft_itoa
-		printf("\n %s\n", ft_itoa(123156));
+		printf("\nft_itoa -> %s\n", ft_itoa(-19));
 
 							// ft_strmapi.c    link my_func remove from libft-makefile
 		strcpy(sts, "germainh");

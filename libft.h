@@ -6,7 +6,7 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 06:55:31 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/01 07:16:39 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:28:18 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -68,12 +68,12 @@ void	ft_putnbr_fd(int n, int fd);
 //
 t_list	*ft_lstnew(void *content);
 int	ft_lstsize(t_list *lst);
-void	ft_lstadd_front(t_list **lst, t_list);
-void	ft_lstadd_back(t_list **lst, t_list);
-t_list	ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
-t_list	ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

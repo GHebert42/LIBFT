@@ -6,59 +6,82 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 06:21:03 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/04 19:00:29 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/05 10:46:36 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static char	*ft_arr(char *x, unsigned int number, long int len)
+static void	ft_minus(int *n, int *minus, int *tmp)
 {
-	while (number > 0)
+	if (*n == -2147483648)
 	{
-		x[len--] = 48 + (number % 10);
-		number = number / 10;
+		*n = *n + 1;
+		*minus = -1;
+		*tmp = 1;
+		*n = *n * -1;
 	}
-	return (x);
+	else if (*n < 0)
+	{
+		*minus = -1;
+		*n = *n * -1;
+		*tmp = 0;
+	}
+	else if (*n >= 0)
+	{
+		*minus = 1;
+		*tmp = 0;
+	}
 }
 
-static long int	ft_len(int nb)
+static int	ft_len(int nb)
 {
 	int	len;
 
 	len = 0;
-	if (nb <= 0)
-		len = 1;
-	while (nb != 0)
+	while (nb > 9)
 	{
-		len++;
 		nb = nb / 10;
+		len++;
 	}
+	len++;
 	return (len);
 }
 
-char	*ft_itoa(int nb)
+static void	ft_set_itoa(char *str, int len, int n, int tmp)
 {
-	char				*str;
-	long int			n;
-	unsigned int		num;
-	int					i;
-
-	i = 1;
-	n = ft_len(nb);
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (!(str))
-		return (NULL);
-	str[n--] = '\0';
-	if (nb == 0)
-		str[0] = '0';
-	if (n < 0)
+	while (n > 9)
 	{
+		str[len--] = (n % 10) + '0' + tmp;
+		n = n / 10;
+		tmp = 0;
+	}
+	str[len] = n + '0';
+}
+
+char	*ft_itoa(int n)
+{
+	char			*str;
+	int				minus;
+	int				len;
+	int				tmp;
+
+	ft_minus(&n, &minus, &tmp);
+	len = ft_len(n);
+	if (minus == -1)
+	{
+		str = malloc((len + 2) * sizeof(char));
+		if (!str)
+			return (NULL);
+		len++;
 		str[0] = '-';
-		num = nb * -1;
-		i *= -1;
 	}
 	else
-		num = nb;
-	str = ft_arr(str, num, n);
+	{
+		str = malloc((len + 1) * sizeof(char));
+		if (!str)
+			return (NULL);
+	}
+	str[len--] = '\0';
+	ft_set_itoa(str, len, n, tmp);
 	return (str);
 }
