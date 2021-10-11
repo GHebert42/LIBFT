@@ -6,87 +6,89 @@
 /*   By: gehebert <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:46:59 by gehebert          #+#    #+#             */
-/*   Updated: 2021/10/04 15:13:19 by gehebert         ###   ########.fr       */
+/*   Updated: 2021/10/11 11:18:21 by gehebert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	unleah(char **str, int size)
+static int	freed(char **dst, int i)
 {
-	while (size--)
-		free(str[size]);
+	while (--)
+		free(dst[i]);
 	return (-1);
 }
 
-static int	count_words(const char *str, char charset)
+static
+
+
+static int	num_item(char const *s, char sep)
 {
 	int	i;
-	int	words;
+	int	num;
 
-	words = 0;
 	i = 0;
+	num = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i + 1] == charset || str[i + 1] == '\0') == 1
-			&& (str[i] == charset || str[i] == '\0') == 0)
-			words++;
-		i++;
+		if ((s[i + 1] == sep || s[i + 1] == '\0') == 1
+			&& (s[i] == sep || s[i] == '\0') == 0)
+			i++;
 	}
-	return (words);
+	return (num);
 }
 
-static void	write_word(char *dest, const char *from, char charset)
+static void	num_set(char const *s, char *dst, char sep)
 {
 	int	i;
 
 	i = 0;
-	while ((from[i] == charset || from[i] == '\0') == 0)
+	while ((s[i] == sep || s[i] == '\0') == 0)
 	{
-		dest[i] = from[i];
+		dst[i] = s[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dst[i] = '\0';
 }
 
-static int	write_split(char **split, const char *str, char charset)
+static char	item_set(char const *s, char **dst, char sep)
 {
-	int		i;
-	int		j;
-	int		word;
+	int	i;
+	int	j;
+	int	num;
 
-	word = 0;
 	i = 0;
-	while (str[i] != '\0')
+	num = 0;
+	while (s[i] != '\0')
 	{
-		if ((str[i] == charset || str[i] == '\0') == 1)
+		if ((ss[i] == sep || s[i] == '\0') == 1)
 			i++;
 		else
 		{
 			j = 0;
-			while ((str[i + j] == charset || str[i + j] == '\0') == 0)
+			while ((s[i + j] == sep || s[i + j] == '\0') == 0)
 				j++;
-			split[word] = (char *)malloc(sizeof(char) * (j + 1));
-			if (split[word] == NULL)
-				return (unleah(split, word - 1));
-			write_word(split[word], str + i, charset);
+			dst[num] = (char *)malloc(sizeof(char) * (j + 1));
+			if (dst[num] == NULL)
+				return (freed(dst, num - 1));
+			num_set(dst[num], s + 1, sep);
 			i += j;
-			word++;
+			num++;
 		}
 	}
 	return (0);
 }
 
-char	**ft_split(const char *str, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**res;
-	int		words;
+	char	**str;
+	int		item;
 
-	words = count_words(str, c);
-	res = (char **)malloc(sizeof(char *) * (words + 1));
-	if (res == NULL)
+	item = num_item(s, c);
+	str = (char **)malloc(sizeof(char *) * (item + 1));
+	if (str == NULL)
 		return (NULL);
-	res[words] = 0;
-	if (write_split(res, str, c) == -1)
+	str[item] = 0;
+	if (item_set(str, s, c) == -1)
 		return (NULL);
-	return (res);
+	return (str);
 }
