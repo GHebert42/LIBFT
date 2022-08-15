@@ -1,6 +1,7 @@
 /*
 //	description des fichiers de la libft actuel
 //		ft_str :  -len   	get lenght
+				: -cpy		copy s2 into s1
 				: -chr		find char 
 				: -cmp		compar
 				: -join		add str next
