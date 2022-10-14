@@ -15,9 +15,12 @@ __A list of prototype from *libft* and their uses__
 	>* __File__
 	>	* __Prototype__
 	>		>* __Task__
-
+         
+         
 ## [ft_is...](#table)
 
+<details>
+	
 * #### ft_isalpha.c
 	* int		ft_isalpha(int c);
 		>* return (1) if 'a' || 'A'
@@ -34,8 +37,12 @@ __A list of prototype from *libft* and their uses__
 	* int		ft_isprint(int c);
 		>* return (1) if _printable_
 
+</details>
+	
 ## [ft_to...](#table)
 
+<details>
+	
 * #### ft_atoi.c
 	* int		ft_atoi(const char *str);
 		* shapeshift __alpha__ to __int__
@@ -48,9 +55,13 @@ __A list of prototype from *libft* and their uses__
 * #### ft_tolower.c
 	* int		ft_tolower(int c);
 		* ... to lowerCase	 
+	
+</details>
 
 ## [ft_str...](#table)
 
+<details>
+	
 * #### ft_strlen.c
 	* size_t	ft_strlen(const char *str);
 		* return _len_ of  _str_
@@ -78,18 +89,15 @@ __A list of prototype from *libft* and their uses__
 * #### ft_strdup.c
 	* char	*ft_strdup(const char *s);
 		* copy  _*const char_ into __malloc ended__ char 
-
 * #### ft_substr.c
 	* char	*ft_substr(char const *s, unsigned int start, size_t len);
 		* return a part of a str __calloc ended__
 * #### ft_strjoin.c
 	* char	*ft_strjoin(const char *s1, const char *s2);
 		* join both const char __malloc ended__ 
-
 * #### ft_strtrim.c
 	* char	*ft_strtrim(const char *s1, const char *set);
 		*  return a selected-removed-chaf-from-str __purify__ 
-
 * #### ft_split.c
 	* char	**ft_split(const char *s, char c);
 		* subdivide str @separator into multiple str
@@ -99,8 +107,11 @@ __A list of prototype from *libft* and their uses__
 * #### ft_striteri.c
 	* void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 		* Making of' create a array/list from any...
-
+</details>
+	
 ## [ft_mem...](#table)
+
+<details>
 
 * #### ft_calloc
 	* void	*ft_calloc(size_t n, size_t size);
@@ -123,10 +134,13 @@ __A list of prototype from *libft* and their uses__
 * #### *ft_memchr
 	* void	*ft_memchr(const void *s, int c, size_t n);
 		* search char into preset len of str **return *ptr || null**
-
+	
+</details>
 
 ### [ft_put...](#table)
 
+<details>
+	
 * #### ft_putchar_fd.c
 	* void	ft_putchar_fd(char c, int fd);
 		>* _write_ __char__ at  ___fd___ 
@@ -139,8 +153,12 @@ __A list of prototype from *libft* and their uses__
 * #### ft_putnbr_fd.c
 	* void	ft_putnbr_fd(int n, int fd);
 		>* _write_ __int__ at  ___fd___
+	
+</details>
 
 ## [ft_lst](#table)
+
+<details>
 
 * void		ft_lstiter(t_list *lst, void (*f)(void *));
 	>* create a list _content,next_
@@ -160,4 +178,7 @@ __A list of prototype from *libft* and their uses__
 	>* delete all list member
 * t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 	>* _mapping_ filling list adding member one-after-other  
+	
+</details>
+
 ## [END](#table)
