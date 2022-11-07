@@ -77,8 +77,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 //
 int		ft_lstsize(t_list *lst);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *nw);
+void	ft_lstadd_back(t_list **lst, t_list *nw);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
@@ -110,6 +110,19 @@ int				ft_all_spaces(char *str);
 int				ft_arraylen(char **str);
 int				ft_abs(float num);
 
+t_list	*ft_mx_lst(char **mx);
+char	**ft_lst_mx(t_list *lst);
+char	*ft_char_str(char c);
+
+char	**ft_mx_dup(char **mx);
+char	**ft_mx_ext(char **stk, char *str);
+char	**ft_mx_rpl(char ***full, char **tab, int n);
+
+int		ft_mx_len(char **mx);
+void	ft_mx_free(char ***mx);
+
+int		ft_strchr_i(const char *s, int c);
+int		ft_strchar_i(const char *s, char *set); 
 
 
 //int		split_av(char ***str, char **av, char *c);
